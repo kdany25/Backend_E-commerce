@@ -2,7 +2,8 @@ import dotenv from "dotenv";
 dotenv.config({ path: "./.env" });
 import express from "express";
 import Mongoose from "mongoose";
-import useRouter from "./routes/userRouter"
+
+import userAuth from "./routes/auth";
 
 const app = express();
 
@@ -11,8 +12,9 @@ Mongoose.connect(process.env.MONGO_URL)
   .catch((err) => {
     console.log(err);
   });
-app.use(express.json())
-  app.use("/api/user", useRouter)
+app.use(express.json());
+app.use("/api/auth", userAuth);
+
 app.listen(5000, () => {
   console.log("Backend server is running");
 });
