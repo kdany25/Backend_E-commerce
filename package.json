@@ -23,7 +23,8 @@
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.8",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "stripe": "^8.200.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
