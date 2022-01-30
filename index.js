@@ -12,7 +12,7 @@ import OrderRoute from "./routes/order";
 const app = express();
 
 Mongoose.connect(process.env.MONGO_URL)
-  .then(() => console.log("DBconnection successfull"))
+  .then(() => console.log("Database is running"))
   .catch((err) => {
     console.log(err);
   });
@@ -24,5 +24,5 @@ app.use("/api/Order", OrderRoute);
 app.use("/api/cart", CartRoute);
 
 app.listen(5000, () => {
-  console.log("Backend server is running");
+  console.log("server is running");
 });
