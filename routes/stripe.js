@@ -1,6 +1,7 @@
-const router = require("express").Router();
+import express from "express";
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
+const router = express.Router();
 router.post("/payment", (req, res) => {
   stripe.charges.create(
     {
