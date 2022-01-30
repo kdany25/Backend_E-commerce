@@ -19,8 +19,8 @@ Mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 app.use("/api/auth", userAuth);
 app.use("/api/user", userRoute);
-app.use("api/product", ProductRoute);
-app.use("api/Order", OrderRoute);
+app.use("/api/product", ProductRoute);
+app.use("/api/Order", OrderRoute);
 app.use("/api/cart", CartRoute);
 
 app.listen(5000, () => {
