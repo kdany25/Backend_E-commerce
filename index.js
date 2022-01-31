@@ -8,6 +8,7 @@ import userRoute from "./routes/user";
 import ProductRoute from "./routes/product";
 import CartRoute from "./routes/cart";
 import OrderRoute from "./routes/order";
+import cors from "cors";
 
 const app = express();
 
@@ -16,10 +17,11 @@ Mongoose.connect(process.env.MONGO_URL)
   .catch((err) => {
     console.log(err);
   });
+app.use(cors());
 app.use(express.json());
 app.use("/api/auth", userAuth);
 app.use("/api/user", userRoute);
-app.use("/api/product", ProductRoute);
+app.use("/api/products", ProductRoute);
 app.use("/api/Order", OrderRoute);
 app.use("/api/cart", CartRoute);
 
