@@ -2,12 +2,12 @@ import dotenv from "dotenv";
 dotenv.config({ path: "./.env" });
 import express from "express";
 import Mongoose from "mongoose";
-
 import userAuth from "./routes/auth";
 import userRoute from "./routes/user";
 import ProductRoute from "./routes/product";
 import CartRoute from "./routes/cart";
 import OrderRoute from "./routes/order";
+import stripeRoute from "./routes/stripe";
 import cors from "cors";
 
 const app = express();
@@ -24,6 +24,7 @@ app.use("/api/user", userRoute);
 app.use("/api/products", ProductRoute);
 app.use("/api/Order", OrderRoute);
 app.use("/api/cart", CartRoute);
+app.use("/api/checkout", stripeRoute);
 
 app.listen(5000, () => {
   console.log("server is running");
