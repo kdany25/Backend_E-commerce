@@ -20,7 +20,7 @@ Mongoose.connect(process.env.MONGO_URL)
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", userAuth);
-app.use("/api/user", userRoute);
+app.use("/api/users", userRoute);
 app.use("/api/products", ProductRoute);
 app.use("/api/Order", OrderRoute);
 app.use("/api/cart", CartRoute);
