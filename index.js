@@ -13,7 +13,7 @@ import cors from "cors";
 const app = express();
 
 Mongoose.connect(process.env.MONGO_URL)
-  .then(() => console.log("Database is running"))
+  .then(() => console.log("Database started "))
   .catch((err) => {
     console.log(err);
   });
@@ -27,5 +27,5 @@ app.use("/api/cart", CartRoute);
 app.use("/api/checkout", stripeRoute);
 
 app.listen(5000, () => {
-  console.log("server is running");
+  console.log("MyClikk backend started ");
 });
