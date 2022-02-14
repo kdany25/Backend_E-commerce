@@ -8,6 +8,8 @@ import ProductRoute from "./routes/product";
 import CartRoute from "./routes/cart";
 import OrderRoute from "./routes/order";
 import stripeRoute from "./routes/stripe";
+import subRoute from "./routes/sub";
+
 import cors from "cors";
 
 const app = express();
@@ -22,9 +24,11 @@ app.use(express.json());
 app.use("/api/auth", userAuth);
 app.use("/api/users", userRoute);
 app.use("/api/products", ProductRoute);
-app.use("/api/Order", OrderRoute);
+app.use("/api/order", OrderRoute);
 app.use("/api/cart", CartRoute);
 app.use("/api/checkout", stripeRoute);
+app.use("/api/sub", subRoute);
+
 
 app.listen(5000, () => {
   console.log("MyClikk backend started ");
