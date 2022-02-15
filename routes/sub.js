@@ -1,4 +1,10 @@
 import Sub from "../models/Sub";
+import {
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} from "./verifyToken";
+
 
 const router = require("express").Router();
 
@@ -58,7 +64,7 @@ router.put("/:id", async (req, res) => {
   });
   
   //GET ALL SUB
-  router.get("/", async (req, res) => {
+  router.get("/",verifyToken, async (req, res) => {
     const query = req.query.new;
     try {
       const users = query
