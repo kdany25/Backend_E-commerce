@@ -8,6 +8,10 @@ const OrderSchema = new mongoose.Schema(
         productId: {
           type: Object,
         },
+        quantity: {
+          type: Number,
+          default: 1,
+        },
       
       },
     ],
