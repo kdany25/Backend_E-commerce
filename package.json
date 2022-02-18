@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/kdany25/Backend_E-commerce#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.8",
     "nodemon": "^2.0.15",

@@ -1,7 +1,7 @@
 import express from "express";
 import User from "../models/User";
 import CryptoJS from "crypto-js";
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"
 
 const router = express.Router();
 
@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
         isAdmin: user.isAdmin,
       },
       process.env.JWT_SEC,
-      { expiresIn: "10h" }
+      {expiresIn:"3d"}
     );
 
     const { password, ...others } = user._doc;
