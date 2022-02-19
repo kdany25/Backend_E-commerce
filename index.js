@@ -13,6 +13,7 @@ import subRoute from "./routes/sub";
 import cors from "cors";
 
 const app = express();
+const PORT = process.env.PORT || 5000
 
 Mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Database started "))
@@ -30,6 +31,6 @@ app.use("/api/checkout", stripeRoute);
 app.use("/api/sub", subRoute);
 
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("MyClikk backend started ");
 });
