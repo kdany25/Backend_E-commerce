@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": " cross-env NODE_ENV=development nodemon --exec babel-node index.js",
-    "start": " babel-node index.js"
+    "start": " cross-env NODE_ENV=development nodemon --exec babel-node index.js",
+    "dev": " babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,13 @@
   },
   "homepage": "https://github.com/kdany25/Backend_E-commerce#readme",
   "dependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "crypto-js": "^4.1.1",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
@@ -29,11 +34,5 @@
     "nodemon": "^2.0.15",
     "stripe": "^8.200.0"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.12",
-    "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.11",
-    "cross-env": "^7.0.3"
-  }
+  "devDependencies": {}
 }
