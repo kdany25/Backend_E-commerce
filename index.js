@@ -22,7 +22,7 @@ Mongoose.connect(process.env.MONGO_URL)
   });
 app.use(
   cors({
-    origin: "*",
+    origin: "*",  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
   })
 );
 app.use(express.json());
