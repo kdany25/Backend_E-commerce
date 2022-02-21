@@ -13,14 +13,18 @@ import subRoute from "./routes/sub";
 import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
 Mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Database started "))
   .catch((err) => {
     console.log(err);
   });
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 app.use("/api/auth", userAuth);
 app.use("/api/users", userRoute);
@@ -29,7 +33,6 @@ app.use("/api/order", OrderRoute);
 app.use("/api/cart", CartRoute);
 app.use("/api/checkout", stripeRoute);
 app.use("/api/sub", subRoute);
-
 
 app.listen(PORT, () => {
   console.log("MyClikk backend started ");
