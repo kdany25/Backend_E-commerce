@@ -7,7 +7,6 @@ import userRoute from "./routes/user";
 import ProductRoute from "./routes/product";
 import CartRoute from "./routes/cart";
 import OrderRoute from "./routes/order";
-import stripeRoute from "./routes/stripe";
 import subRoute from "./routes/sub";
 
 import cors from "cors";
@@ -26,12 +25,11 @@ app.use(
   })
 );
 app.use(express.json());
-app.use("/api/auth", userAuth);
-app.use("/api/users", userRoute);
-app.use("/api/products", ProductRoute);
-app.use("/api/order", OrderRoute);
-app.use("/api/cart", CartRoute);
-app.use("/api/checkout", stripeRoute);
+app.use("/api/auth", cors(), userAuth);
+app.use("/api/users",cors(), userRoute);
+app.use("/api/products", cors(),ProductRoute);
+app.use("/api/order",cors(), OrderRoute);
+app.use("/api/cart",cors(), CartRoute);
 app.use("/api/sub", subRoute);
 
 app.listen(PORT, () => {
