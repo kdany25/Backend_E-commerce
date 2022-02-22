@@ -64,7 +64,7 @@ router.put("/:id", async (req, res) => {
   });
   
   //GET ALL SUB
-  router.get("/",verifyToken, async (req, res) => {
+  router.get("/", async (req, res) => {
     const query = req.query.new;
     try {
       const users = query
