@@ -8,6 +8,7 @@ import ProductRoute from "./routes/product";
 import CartRoute from "./routes/cart";
 import OrderRoute from "./routes/order";
 import subRoute from "./routes/sub";
+import paymentRoute from "./routes/Kpay"
 
 import cors from "cors";
 
@@ -32,6 +33,7 @@ app.use("/api/products", cors(),ProductRoute);
 app.use("/api/order",cors(), OrderRoute);
 app.use("/api/cart",cors(), CartRoute);
 app.use("/api/sub", subRoute);
+app.use("/api/payment", paymentRoute);
 
 app.listen(PORT, () => {
   console.log("MyClikk backend started ");
