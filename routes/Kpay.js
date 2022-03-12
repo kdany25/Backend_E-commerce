@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     retailerid: "23",
     returl: "myclikkreact.herokuapp.com/",
     redirecturl: "myclikkreact.herokuapp.com/",
-    bankid: "130",
+    bankid: "131",
   };
 
   const response = await fetch("https://pay.esicia.com", {
